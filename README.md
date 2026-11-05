@@ -21,3 +21,9 @@
 - **Query Param**: `&genre=28`
 - **Value**: Hardcoded initially to `28`
 - **Steps**: Include query param to fetch URL using `URLSearchParams`.
+
+### 4. Sorting
+
+- **Query Param**: `&sort_by=popularity.desc`
+- **Value**: Hardcoded initially to `popularity.desc`
+- **Steps**: Include query param to fetch URL using `URLSearchParams`.
