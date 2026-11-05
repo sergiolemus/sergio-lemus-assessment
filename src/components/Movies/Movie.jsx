@@ -6,7 +6,7 @@ export const Movie = ({ title, img, overview }) => {
       <img src={imgUrl} className="w-full h-auto block" />
       <div className="absolute inset-0 p-4 bg-black/60 text-white opacity-0 group-hover:opacity-100">
         <div className="font-bold mb-2">{title}</div>
-        <div className="text-sm">{overview}</div>
+        <div className="text-sm line-clamp-8">{overview}</div>
       </div>
     </div>
   );
