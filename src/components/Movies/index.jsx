@@ -20,6 +20,9 @@ export const Movies = () => {
         endpoint.searchParams.set("page", 1);
 
         const res = await fetch(endpoint);
+
+        if (!res.ok) throw new Error("Network error");
+
         const movies = await res.json();
 
         setMovies(movies.results);
