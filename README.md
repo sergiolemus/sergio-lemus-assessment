@@ -27,3 +27,12 @@
 - **Query Param**: `&sort_by=popularity.desc`
 - **Value**: Hardcoded initially to `popularity.desc`
 - **Steps**: Include query param to fetch URL using `URLSearchParams`.
+
+### 5. Styling
+
+- **Grid**: Use `grid`utility classes, extensible for responsiveness.
+- **Card**: Create `<Movie/>` as standalone component with the following props.
+  - `title={item.title}`
+  - `img={item.poster_path}`
+  - `overview={item.overview}`
+- **Interaction**: Image will be in the background, with the title and overview appearing on hover.
