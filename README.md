@@ -71,3 +71,25 @@
 - Opted to not implement this one since it usually requires abstracting logic and components into the overaching styles.
 - I would choosen List View.
 - The overhead in styling and not duplicating functionality, made this risky to implement within the time frame.
+
+### Future Improvements
+
+### 1. Caching & State Management
+
+- Migrate native fetch to TanStack Query (React Query) to handle request deduplication, caching, and loading/error state management.
+
+### 2. Testing Strategy
+
+- Implement Vitest and React Testing Library to add unit tests for the sorting/filtering logic and snapshot tests for the UI components.
+
+### 3. Pagination
+
+- Enhance the API integration to fetch subsequent pages using an Intersection Observer for infinite scrolling.
+
+### 4. Accessibility (a11y):
+
+- Audit the filter dropdowns and hover overlays for keyboard navigation and screen-reader compliance (ARIA labels).
+
+### 5. Reponsive Layout
+
+- Add tablet and mobile variant implementation for filtering and sorting options for better UI/UX experience.
