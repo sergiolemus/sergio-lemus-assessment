@@ -15,3 +15,9 @@
 - **Request**: Will render raw content on the UI via `useEffect` and `fetch`.
 - **Rendering**: Will have basic error handling and loading state.
 - **Styling**: None.
+
+### 3. Filtering
+
+- **Query Param**: `&genre=28`
+- **Value**: Hardcoded initially to `28`
+- **Steps**: Include query param to fetch URL using `URLSearchParams`.
