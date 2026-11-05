@@ -66,24 +66,6 @@ export const Movies = () => {
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
             <label
-              htmlFor="sort-select"
-              className="text-sm font-medium text-gray-700"
-            >
-              Sort By:
-            </label>
-            <select
-              id="sort-select"
-              value={sort}
-              onChange={changeSort}
-              className="border border-gray-300 rounded-md px-3 py-1.5 text-sm bg-white shadow-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              {SORT.map(({ id, name }) => (
-                <option value={id}>{name}</option>
-              ))}
-            </select>
-          </div>
-          <div className="flex items-center gap-2">
-            <label
               htmlFor="genre-select"
               className="text-sm font-medium text-gray-700"
             >
@@ -96,6 +78,24 @@ export const Movies = () => {
               className="border border-gray-300 rounded-md px-3 py-1.5 text-sm bg-white shadow-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               {GENRES.map(({ id, name }) => (
+                <option value={id}>{name}</option>
+              ))}
+            </select>
+          </div>
+          <div className="flex items-center gap-2">
+            <label
+              htmlFor="sort-select"
+              className="text-sm font-medium text-gray-700"
+            >
+              Sort By:
+            </label>
+            <select
+              id="sort-select"
+              value={sort}
+              onChange={changeSort}
+              className="border border-gray-300 rounded-md px-3 py-1.5 text-sm bg-white shadow-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              {SORT.map(({ id, name }) => (
                 <option value={id}>{name}</option>
               ))}
             </select>
