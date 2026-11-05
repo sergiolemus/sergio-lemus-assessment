@@ -4,11 +4,13 @@ import { Loading } from "./Loading";
 export const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
         setLoading(true);
+        setError(null);
 
         const endpoint = new URL(
           " https://api.themoviedb.org/3/discover/movie",
@@ -22,6 +24,9 @@ export const Movies = () => {
 
         setMovies(movies.results);
       } catch (e) {
+        if (e instanceof Error) {
+          setError(e.message);
+        }
       } finally {
         setLoading(false);
       }
@@ -31,6 +36,7 @@ export const Movies = () => {
   }, []);
 
   if (loading) return <Loading />;
+  if (error) return <Error message={error} />;
 
   return <div>{JSON.stringify(movies)}</div>;
 };
