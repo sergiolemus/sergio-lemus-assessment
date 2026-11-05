@@ -13,9 +13,7 @@ export const Movies = () => {
         setLoading(true);
         setError(null);
 
-        const endpoint = new URL(
-          " https://api.themoviedb.org/3/discover/movie",
-        );
+        const endpoint = new URL("https://api.themoviedb.org/3/discover/movie");
 
         endpoint.searchParams.set("api_key", process.env.API_KEY);
         endpoint.searchParams.set("page", 1);
