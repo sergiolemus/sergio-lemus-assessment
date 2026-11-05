@@ -61,29 +61,64 @@ export const Movies = () => {
 
   return (
     <div>
-      <div>
-        <label htmlFor="sort-select">Sort By:</label>
-        <select id="sort-select" value={sort} onChange={changeSort}>
-          {SORT.map(({ id, name }) => (
-            <option value={id}>{name}</option>
-          ))}
-        </select>
-      </div>
-      <div>
-        <label htmlFor="genre-select">Genre:</label>
-        <select id="genre-select" value={genre} onChange={changeGenre}>
-          {GENRES.map(({ id, name }) => (
-            <option value={id}>{name}</option>
-          ))}
-        </select>
-      </div>
-      <div>
-        <label htmlFor="order-select">Order By:</label>
-        <select id="order-select" value={order} onChange={changeOrder}>
-          {ORDER.map(({ id, name }) => (
-            <option value={id}>{name}</option>
-          ))}
-        </select>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-2xl font-bold">Movies</h1>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <label
+              htmlFor="sort-select"
+              className="text-sm font-medium text-gray-700"
+            >
+              Sort By:
+            </label>
+            <select
+              id="sort-select"
+              value={sort}
+              onChange={changeSort}
+              className="border border-gray-300 rounded-md px-3 py-1.5 text-sm bg-white shadow-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              {SORT.map(({ id, name }) => (
+                <option value={id}>{name}</option>
+              ))}
+            </select>
+          </div>
+          <div className="flex items-center gap-2">
+            <label
+              htmlFor="genre-select"
+              className="text-sm font-medium text-gray-700"
+            >
+              Genre:
+            </label>
+            <select
+              id="genre-select"
+              value={genre}
+              onChange={changeGenre}
+              className="border border-gray-300 rounded-md px-3 py-1.5 text-sm bg-white shadow-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              {GENRES.map(({ id, name }) => (
+                <option value={id}>{name}</option>
+              ))}
+            </select>
+          </div>
+          <div className="flex items-center gap-2">
+            <label
+              htmlFor="order-select"
+              className="text-sm font-medium text-gray-700"
+            >
+              Order By:
+            </label>
+            <select
+              id="order-select"
+              value={order}
+              onChange={changeOrder}
+              className="border border-gray-300 rounded-md px-3 py-1.5 text-sm bg-white shadow-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              {ORDER.map(({ id, name }) => (
+                <option value={id}>{name}</option>
+              ))}
+            </select>
+          </div>
+        </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4">
         {movies.map(({ title, overview, poster_path }) => (
