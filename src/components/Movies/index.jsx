@@ -78,7 +78,9 @@ export const Movies = () => {
               className="border border-gray-300 rounded-md px-3 py-1.5 text-sm bg-white shadow-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               {GENRES.map(({ id, name }) => (
-                <option value={id}>{name}</option>
+                <option key={id} value={id}>
+                  {name}
+                </option>
               ))}
             </select>
           </div>
@@ -96,7 +98,9 @@ export const Movies = () => {
               className="border border-gray-300 rounded-md px-3 py-1.5 text-sm bg-white shadow-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               {SORT.map(({ id, name }) => (
-                <option value={id}>{name}</option>
+                <option key={id} value={id}>
+                  {name}
+                </option>
               ))}
             </select>
           </div>
@@ -114,15 +118,17 @@ export const Movies = () => {
               className="border border-gray-300 rounded-md px-3 py-1.5 text-sm bg-white shadow-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               {ORDER.map(({ id, name }) => (
-                <option value={id}>{name}</option>
+                <option key={id} value={id}>
+                  {name}
+                </option>
               ))}
             </select>
           </div>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4">
-        {movies.map(({ title, overview, poster_path }) => (
-          <Movie title={title} overview={overview} img={poster_path} />
+        {movies.map(({ id, title, overview, poster_path }) => (
+          <Movie key={id} title={title} overview={overview} img={poster_path} />
         ))}
       </div>
     </div>
