@@ -36,3 +36,26 @@
   - `img={item.poster_path}`
   - `overview={item.overview}`
 - **Interaction**: Image will be in the background, with the title and overview appearing on hover.
+
+### Target Extras
+
+### 1. Resposiveness
+
+- **Grid**: Use Tailwind CSS breakpoints.
+
+### 2. Add CSS Transitions
+
+- **Interaction**: Add smooth transition to hover styles for `<Movie/>`
+
+### 3. UI for Filtering + Sorting
+
+- **Filtering:** Create `<Filter/>` component to render dropdown of genres,
+  - Initialize `filter` state in overarching component.
+  - `onChange`, set the state to the selected option.
+  - Fetch all genres from the API.
+    - Endpoint: https://api.themoviedb.org/3/genre/movie/list?api_key={{api_key}}&language=en
+  - Render `item.name` as values.
+- **Sorting**: Create `<Sort/>` component.
+  - Initialize `sort` state in overarching component.
+  - `onChange`, set the state to the selected option.
+  - Hardcode options as no API is available.
