@@ -18,6 +18,8 @@ export const Movies = () => {
 
         endpoint.searchParams.set("api_key", process.env.API_KEY);
         endpoint.searchParams.set("page", 1);
+        endpoint.searchParams.set("with_genres", 28);
+        endpoint.searchParams.set("sort_by", "popularity.desc");
 
         const res = await fetch(endpoint);
 
