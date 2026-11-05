@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { Loading } from "./Loading";
 import { Movie } from "./Movie";
-import { GENRES } from "../../constants/GENRES";
+import { GENRES, SORT, ORDER } from "../../constants/movies";
 
 export const Movies = () => {
   const [genre, setGenre] = useState(28);
+  const [sort, setSort] = useState("popularity");
+  const [order, setOrder] = useState("desc");
   const [movies, setMovies] = useState([]);
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -20,7 +23,7 @@ export const Movies = () => {
         endpoint.searchParams.set("api_key", process.env.API_KEY);
         endpoint.searchParams.set("page", 1);
         endpoint.searchParams.set("with_genres", genre);
-        endpoint.searchParams.set("sort_by", "popularity.desc");
+        endpoint.searchParams.set("sort_by", `${sort}.${order}`);
 
         const res = await fetch(endpoint);
 
@@ -39,10 +42,18 @@ export const Movies = () => {
     };
 
     fetchMovies();
-  }, [genre]);
+  }, [genre, sort, order]);
 
   const changeGenre = (event) => {
     setGenre(event.target.value);
+  };
+
+  const changeSort = (event) => {
+    setSort(event.target.value);
+  };
+
+  const changeOrder = (event) => {
+    setOrder(event.target.value);
   };
 
   if (loading) return <Loading />;
@@ -51,9 +62,25 @@ export const Movies = () => {
   return (
     <div>
       <div>
+        <label htmlFor="sort-select">Sort By:</label>
+        <select id="sort-select" value={sort} onChange={changeSort}>
+          {SORT.map(({ id, name }) => (
+            <option value={id}>{name}</option>
+          ))}
+        </select>
+      </div>
+      <div>
         <label htmlFor="genre-select">Genre:</label>
         <select id="genre-select" value={genre} onChange={changeGenre}>
           {GENRES.map(({ id, name }) => (
+            <option value={id}>{name}</option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label htmlFor="order-select">Order By:</label>
+        <select id="order-select" value={order} onChange={changeOrder}>
+          {ORDER.map(({ id, name }) => (
             <option value={id}>{name}</option>
           ))}
         </select>
