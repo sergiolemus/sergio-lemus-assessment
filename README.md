@@ -49,11 +49,10 @@
 
 ### 3. UI for Filtering + Sorting
 
-- **Filtering:** Create `<Filter/>` component to render dropdown of genres,
+- **Filtering:** Render dropdown of genres,
   - Initialize `filter` state in overarching component.
   - `onChange`, set the state to the selected option.
-  - Fetch all genres from the API.
-    - Endpoint: https://api.themoviedb.org/3/genre/movie/list?api_key={{api_key}}&language=en
+  - Hardcode API options for simplicity.
   - Render `item.name` as values.
 - **Sorting**: Create `<Sort/>` component.
   - Initialize `sort` state in overarching component.
