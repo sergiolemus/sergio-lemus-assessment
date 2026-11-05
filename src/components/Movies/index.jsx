@@ -45,7 +45,7 @@ export const Movies = () => {
   if (error) return <Error message={error} />;
 
   return (
-    <div>
+    <div className="grid grid-cols-5 gap-4">
       {movies.map(({ title, overview, poster_path }) => (
         <Movie title={title} overview={overview} img={poster_path} />
       ))}

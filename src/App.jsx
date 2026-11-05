@@ -1,7 +1,11 @@
 import { Movies } from "./components/Movies";
 
 const App = () => {
-  return <Movies />;
+  return (
+    <div className="m-24">
+      <Movies />
+    </div>
+  );
 };
 
 export default App;
