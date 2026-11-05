@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Loading } from "./Loading";
+import { Movie } from "./Movie";
 
 export const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -43,5 +44,11 @@ export const Movies = () => {
   if (loading) return <Loading />;
   if (error) return <Error message={error} />;
 
-  return <div>{JSON.stringify(movies)}</div>;
+  return (
+    <div>
+      {movies.map(({ title, overview, poster_path }) => (
+        <Movie title={title} overview={overview} img={poster_path} />
+      ))}
+    </div>
+  );
 };
