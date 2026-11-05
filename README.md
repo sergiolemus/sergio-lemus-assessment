@@ -58,3 +58,16 @@
   - Initialize `sort` state in overarching component.
   - `onChange`, set the state to the selected option.
   - Hardcode options as no API is available.
+
+### Other Extras
+
+### 1. Adjust element sizing based on rating
+
+- Opted to not implement this one since relative sizing is difficult to make presentable from scratch without spending a lot of time.
+- Even with AI, it would be risky to try to time box this one without compromising time for the rest.
+
+### 2. Implement a different layout option for the posters
+
+- Opted to not implement this one since it usually requires abstracting logic and components into the overaching styles.
+- I would choosen List View.
+- The overhead in styling and not duplicating functionality, made this risky to implement within the time frame.
